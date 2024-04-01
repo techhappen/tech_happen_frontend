@@ -2,3 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@font-face {
+  font-family: 'coolvetica';
+
+  src: url('../public/assets/font/coolvetica\ rg.otf') format('truetype');
+  font-weight: 100; 
+  font-style: normal;
+}
+
+body {
+  font-family: 'coolvetica', sans-serif;
+  font-weight:lighter;
+  font-weight: 100;
+  color:  #151515;
+  
+}
+
+
+
+
+
+.rec-dot_active {
+    background-color: var(--blue) !important;
+    box-shadow: 0 0 1px 3px var(--blue) !important;
+}
+.rec-dot:focus,
+.rec-dot:hover {
+    box-shadow: 0 0 1px 3px var(--blue) !important;
+}
+.rec-dot_active:focus,
+.rec-dot_active:hover {
+    background-color: var(--blue) !important;
+    box-shadow: 0 0 1px 3px var(--blue) !important;
+}
+
+.rec-arrow {
+   
+    background-color: var(--blue) !important;
+    transition: all 0.3s ease;
+    font-size: 1.1rem !important;
+    color: black !important;
+    width: 1.7rem !important;
+    height: 1.7rem !important;
+    min-width: 1.7rem !important;
+    line-height: 1.7rem !important;
+   
+}
+
+.rec-arrow:hover:not(:disabled) {
+    transform: scale(1.2);
+}
+
+
+
+
+
