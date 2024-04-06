@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Carousel from "react-elastic-carousel";
+import Carousel from "@itseasy21/react-elastic-carousel";
 
 const PodcastData = [
   {
@@ -25,7 +25,7 @@ const PodcastData = [
 
 export default function Podcast() {
   return (
-    <div className="mx-6 absolute">
+    <div className="mx-6">
       <h1 className="text-xl my-5">
         <span className="border-b-4 border-[#FFA500]">Podcasts</span>
       </h1>
