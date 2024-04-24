@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="mt-2 p-6 bg-gradient-to-r from-[#FFFFFF] to-[#D3D3FB]">
+    <div className="mt-2 p-6 lg:px-28 bg-gradient-to-r from-[#FFFFFF] to-[#D3D3FB]">
       <div className="md:flex flex-row-reverse justify-between">
         <div className="block md:flex justify-between w-full">
-          <Image src="/assets/images/logo.svg" height={68} width={180} className="md:m-auto" />
+          <Image src="/assets/images/logo.svg" alt="image" height={68} width={180} className="md:m-auto w-auto h-auto" />
           <div className="flex bg-white w-[250px] h-[40px] border rounded-3xl px-[20px] py-[8px] my-4">
             <input
               type="text"
@@ -14,8 +14,8 @@ export default function Footer() {
             />
             <button>
               <Image
-                src="/assets/images/searchIcon.svg"
-                height={24}
+                src="/assets/icons/searchIcon.svg"
+                alt="image" height={24}
                 width={24}
               />
             </button>
@@ -24,17 +24,17 @@ export default function Footer() {
         <div className="my-8">
           <p className="my-2 md:hidden">Connect with us</p>
           <div className="flex justify-between w-40">
-            <a href="#"><Image src="/assets/images/facebookIcon.svg" height={23} width={23} /></a>
-            <a href="#"><Image src="/assets/images/twitterIcon.svg" height={23} width={23} /></a>
-            <a href="#"><Image src="/assets/images/linkedinIcon.svg" height={23} width={23} /></a>
-            <a href="#"><Image src="/assets/images/youtubeIcon.svg" height={23} width={23} /></a>
-            <a href="#"><Image src="/assets/images/instagramIcon.svg" height={21} width={21}
+            <a href="#"><Image src="/assets/icons/facebookIcon.svg" alt="image" height={23} width={23} className="hover:animate-bounce" /></a>
+            <a href="#"><Image src="/assets/icons/twitterIcon.svg" alt="image" height={23} width={23} className="hover:animate-bounce" /></a>
+            <a href="#"><Image src="/assets/icons/linkedinIcon.svg" alt="image" height={23} width={23} className="hover:animate-bounce" /></a>
+            <a href="#"><Image src="/assets/icons/youtubeIcon.svg" alt="image" height={23} width={23} className="hover:animate-bounce" /></a>
+            <a href="#"><Image src="/assets/icons/instagramIcon.svg" alt="image" height={21} width={21} className="hover:animate-bounce"
             /></a>
           </div>
         </div>
       </div>
       <hr className="my-2 md:my-8" />
-      <div className="w-[552px] h-[36px] mx-auto">
+      <div className="h-[36px] md:w-[500px] mx-auto">
         <ul className="md:flex justify-between">
           <li className="mb-2 hover:text-[#003366]">
             <a href="#">About TechHappen</a>

@@ -22,6 +22,9 @@ body {
 
 
 
+.page-transition {
+    transition: all 0.5s ease-in-out;
+  }
 
 .rec-dot_active {
     background-color: var(--blue) !important;

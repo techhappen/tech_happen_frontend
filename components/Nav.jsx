@@ -1,86 +1,105 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import NavMobile from "./NavMobile";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
-
-  const [displayMenu, setDisplayMenu] = useState(true);
+  const [displayMenu, setDisplayMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleMenu = () => {
-    setDisplayMenu(false);
-  }
+    setDisplayMenu(true);
+  };
 
   const handleCancleMenu = () => {
-    setDisplayMenu(true);
-  }
+    setDisplayMenu(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <nav className={!displayMenu ? `bg-white w-[280px] h-full bg-gradient-to-r from-[#E7F3FF] to-[#FFFFFF] p-3 absolute z-50 transition-all duration-300 block` : `bg-white w-[280px] h-full bg-gradient-to-r from-[#E7F3FF] to-[#FFFFFF] p-3 absolute z-50 hidden`}>
-        <button className="ms-[200px]" onClick={handleCancleMenu}>
-          <Image 
-          src="/assets/images/Cancel.svg"
-          height={40}
-          width={40}
-          />
-        </button>
-        <div className="my-3">
-        <h1 className="text-xl my-8">
-          <span className="border-b-4 border-[#FFA500]">Follow</span> us on our Social handles
-        </h1>
-          <a href="#" className="flex my-5 hover:text-[#003366] transition duration-500">
-            <Image src="/assets/images/facebookIcon.svg" height={23} width={23} />
-            <p className="ms-2">Facebook</p>
-          </a>
-          <a href="#" className="flex my-5 hover:text-[#003366] transition duration-500">
-            <Image src="/assets/images/twitterIcon.svg" height={23} width={23} />
-            <p className="ms-2">X (Twitter)</p>
-          </a>
-          <a href="#" className="flex my-5 hover:text-[#003366] transition duration-500">
-            <Image src="/assets/images/linkedinIcon.svg" height={23} width={23} />
-            <p className="ms-2">LinkedIn</p>
-          </a>
-          <a href="#" className="flex my-5 hover:text-[#003366] transition duration-500">
-            <Image src="/assets/images/youtubeIcon.svg" height={23} width={23} />
-            <p className="ms-2">Youtube</p>
-          </a>
-          <a href="#" className="flex my-5 hover:text-[#003366] transition duration-500">
-            <Image
-              src="/assets/images/instagramIcon.svg"
-              height={23}
-              width={23}
-            />
-            <p className="ms-2">Instagram</p>
-          </a>
-        </div>
-      </nav>
-
-      <nav className="px-6 py-3 flex justify-between border-b-2 border-[#DDDDDD]">
+      <nav
+        className={`px-6 py-5 flex justify-between border-b-2 border-[#DDDDDD] fixed top-0 w-full md:px-[50px] z-50 ${
+          scrolled ? "page-transition bg-[#DDDDDD] bg-opacity-95" : ""
+        }`}
+      >
         <div className="hidden md:flex mt-2 justify-between w-40">
           <a href="#">
-            <Image src="/assets/images/facebookIcon.svg" height={23} width={23} />
-          </a>
-          <a href="#">
-            <Image src="/assets/images/twitterIcon.svg" height={23} width={23} />
-          </a>
-          <a href="#">
-            <Image src="/assets/images/linkedinIcon.svg" height={23} width={23} />
-          </a>
-          <a href="#">
-            <Image src="/assets/images/youtubeIcon.svg" height={23} width={23} />
+            <Image
+              src="/assets/icons/facebookIcon.svg"
+              alt="icon"
+              height={23}
+              width={23}
+              className="hover:animate-bounce"
+            />
           </a>
           <a href="#">
             <Image
-              src="/assets/images/instagramIcon.svg"
+              src="/assets/icons/twitterIcon.svg"
+              alt="icon"
+              height={23}
+              width={23}
+              className="hover:animate-bounce"
+            />
+          </a>
+          <a href="#">
+            <Image
+              src="/assets/icons/linkedinIcon.svg"
+              alt="icon"
+              height={23}
+              width={23}
+              className="hover:animate-bounce"
+            />
+          </a>
+          <a href="#">
+            <Image
+              src="/assets/icons/youtubeIcon.svg"
+              alt="icon"
+              height={23}
+              width={23}
+              className="hover:animate-bounce"
+            />
+          </a>
+          <a href="#">
+            <Image
+              src="/assets/icons/instagramIcon.svg"
+              alt="icon"
               height={21}
               width={21}
+              className="hover:animate-bounce"
             />
           </a>
         </div>
-        <div className="bg-[#FAFAFA] md:hidden p-2 rounded-full border-2 border-[#EEEEEE]">
-          <button onClick={handleMenu}>
-            <Image src="/assets/icons/menu.svg" alt="menu" width={20} height={20} />
+        <div className="md:hidden">
+          <button
+            onClick={handleMenu}
+            className={`${displayMenu ? "hidden" : "block"}`}
+          >
+            <Image
+              src="/assets/icons/menu.svg"
+              alt="menu"
+              width={40}
+              height={40}
+            />
+          </button>
+          <button
+            onClick={handleCancleMenu}
+            className={`${displayMenu ? "block -rotate-90" : "hidden"}`}
+          >
+            <Image src="/assets/images/Cancel.svg" alt="cancle" height={40} width={40} />
           </button>
         </div>
         <div>
@@ -89,9 +108,10 @@ const Nav = () => {
             alt="logo"
             width={110}
             height={40}
+            className="h-auto w-auto"
           />
         </div>
-        <div className="bg-[#FAFAFA] md:hidden  p-2 rounded-full border-2 border-[#EEEEEE]">
+        <div className="bg-[#FAFAFA] md:hidden w-[46px] p-2 rounded-full border-2 border-[#EEEEEE]">
           <Image
             src="/assets/icons/search.svg"
             alt="search"
@@ -106,10 +126,18 @@ const Nav = () => {
             className="bg-transparent outline-none"
           />
           <button>
-            <Image src="/assets/images/searchIcon.svg" height={24} width={24} />
+            <Image
+              src="/assets/icons/searchIcon.svg"
+              alt="search"
+              height={24}
+              width={24}
+            />
           </button>
         </div>
       </nav>
+      {displayMenu && (
+        <NavMobile setDisplayMenu={setDisplayMenu} displayMenu={displayMenu} />
+      )}
     </>
   );
 };

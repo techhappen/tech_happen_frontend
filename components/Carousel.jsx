@@ -53,7 +53,7 @@ const Carousel = () => {
                 <span className=" flex absolute top-4 right-5 bg-white py-1 px-2 rounded-full">
                   <Image
                     src="/assets/icons/global.svg"
-                    className="mr-1"
+                    className="mr-1 w-auto h-auto"
                     alt="arrow"
                     width={15}
                     height={10}
@@ -65,7 +65,7 @@ const Carousel = () => {
                 <span className="bg-[#FFE2FF] text-[#800080] p-2 rounded-md ">
                   {blog.blogType}
                 </span>
-                <p className="mt-3 leading-snug">{blog.blogContent}</p>
+                <p className="mt-3 leading-snug">{blog.blogHead}</p>
 
                 <div className="my-3 flex justify-between">
                   <div className="flex items-center">
@@ -90,7 +90,7 @@ const Carousel = () => {
                   Continue Reading
                   <Image
                     src="/assets/icons/arrow-down.svg"
-                    className="ml-1"
+                    className="ml-1 w-auto h-auto"
                     alt="arrow"
                     width={20}
                     height={10}
