@@ -3,6 +3,7 @@ import Image from "next/image";
 import Ads from "@/components/Ads";
 import BlogDetails from "../page";
 import RelatedNews from "@/components/RelatedNews";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const res = await fetch("http://localhost:4000/blogsData")
@@ -23,7 +24,7 @@ async function getBlog(id) {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+      return notFound();
     }
 
     const data = await res.json();

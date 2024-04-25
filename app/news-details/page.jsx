@@ -25,7 +25,7 @@ export default function BlogDetails({ blogsData }) {
           <h2 className="text-xs">{blogsData.country}</h2>
         </span>
 
-        <div className="card w-[311px] md:w-[668px] p-3 md:p-7 absolute bottom-0 bg-white">
+        <div className="card w-[311px] md:w-[400px] lg:w-[668px] p-3 md:p-5 lg:p-7 absolute bottom-0 bg-white">
           <span className="bg-[#FFE2FF] text-sm font-normal text-[#800080] p-2 rounded-md ">
             {blogsData.blogType}
           </span>

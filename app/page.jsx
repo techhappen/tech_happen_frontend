@@ -4,12 +4,16 @@ import Popular from "@/components/Popular";
 import Videos from "@/components/Videos";
 import Header from "@/components/Header";
 import Ads from "@/components/Ads";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function Home() {
   return (
     <main className="lg:px-[100px]">
       <Ads />
-      <Header />
+      <Suspense fallback={<Loading/>} >
+        <Header />
+      </Suspense>
       <Ads />
       <Articles />
       <Popular />

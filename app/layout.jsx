@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <div className="lg:hidden">
           <NewsLetter />
         </div>
-        <Footer />
+        <Footer className="relative" />
       </body>
     </html>
   );

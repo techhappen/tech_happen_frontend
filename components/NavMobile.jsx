@@ -1,14 +1,13 @@
 import Image from "next/image";
 
-export default function NavMobile({displayMenu}) {
-  
-
-
+export default function NavMobile({ displayMenu }) {
   return (
-    <div className=" bg-red-500 w-full">
-      <nav
-        className={`${displayMenu ? "page-transition" : ''} w-[280px] h-full bg-gradient-to-r from-[#E7F3FF] to-[#FFFFFF] p-3 fixed z-50 md:hidden`}
-      >
+    <nav
+      className={`${
+        displayMenu ? "page-transition" : ""
+      } w-full h-full bg-[#000000a1] fixed top-20 z-50 md:hidden`}
+    >
+      <div className={`${displayMenu ? "page-transition" : ""} w-[280px] h-full border bg-gradient-to-r from-[#E7F3FF] to-[#FFFFFF] p-3 `}>
         <div className="my-3">
           <h1 className="text-xl my-8">
             <span className="border-b-4 border-[#FFA500]">Follow</span> us on
@@ -75,7 +74,7 @@ export default function NavMobile({displayMenu}) {
             <p className="ms-2">Instagram</p>
           </a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

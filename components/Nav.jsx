@@ -33,7 +33,7 @@ const Nav = () => {
     <>
       <nav
         className={`px-6 py-5 flex justify-between border-b-2 border-[#DDDDDD] fixed top-0 w-full md:px-[50px] z-50 ${
-          scrolled ? "page-transition bg-[#DDDDDD] bg-opacity-95" : ""
+          scrolled ? "page-transition bg-gradient-to-r from-[#e7f3fff4] to-[#fffffff2]" : ""
         }`}
       >
         <div className="hidden md:flex mt-2 justify-between w-40">
@@ -115,8 +115,8 @@ const Nav = () => {
           <Image
             src="/assets/icons/search.svg"
             alt="search"
-            width={20}
-            height={20}
+            width={30}
+            height={30}
           />
         </div>
         <div className="hidden md:flex bg-white w-[250px] h-[40px] border rounded-3xl px-[20px] py-[8px]">
