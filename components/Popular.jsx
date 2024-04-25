@@ -7,7 +7,7 @@ import Link from "next/link";
 const getBlogs = async () => {
   const res = await fetch("http://localhost:4000/blogsData", {
     next: {
-      revalidate: 1
+      revalidate: 30
     }
   });
   return res.json();
@@ -27,7 +27,7 @@ const Popular = () => {
   }, []);
 
   const handlePagination = () => {
-    setPagination(prevPagination => prevPagination + 1);
+    setPagination(loadMore => loadMore + 1);
   };
 
   return (
@@ -35,7 +35,7 @@ const Popular = () => {
       <h1 className="text-xl my-5">
         <span className="border-b-4 border-[#FFA500]">Popular</span> and Trending
       </h1>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {blogsData.slice(0, pagination).map((blog) => (
           <section
             className="mt-5 hover:bg-slate-50 border-2 overflow-hidden rounded-3xl"

@@ -1,4 +1,5 @@
 import Ads from "@/components/Ads";
+import NewsLetter from "@/components/NewsLetter";
 import Image from "next/image";
 
 export default function BlogDetails({ blogsData }) {
@@ -11,7 +12,7 @@ export default function BlogDetails({ blogsData }) {
           width={1080}
           height={508}
           quality={75}
-          className="border rounded-xl"
+          className="border rounded-xl w-full"
         />
         <span className=" flex absolute top-5 right-6 bg-white py-1 px-2 rounded-full">
           <Image
@@ -52,11 +53,19 @@ export default function BlogDetails({ blogsData }) {
           </div>
         </div>
       </section>
-      <section className="md:w-[668px] p-3">
-        <p>{blogsData.blogContent}</p>
-        <Ads />
-        <p>{blogsData.blogContent2}</p>
-        <i className="my-5 text-[#898989]">Written and Published on {blogsData.date} </i>
+
+      <section className="lg:flex">
+        <div className="md:w-[668px] p-3">
+          <p>{blogsData.blogContent}</p>
+          <Ads />
+          <p>{blogsData.blogContent2}</p>
+          <i className="my-5 text-[#898989]">
+            Written and Published on {blogsData.date}{" "}
+          </i>
+        </div>
+        <div className="hidden lg:block">
+          <NewsLetter />
+        </div>
       </section>
     </main>
   );

@@ -1,12 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import Ads from "@/components/Ads";
+import BlogDetails from "../page";
+import RelatedNews from "@/components/RelatedNews";
 
-const getBlog = async (id) => {
+export async function generateStaticParams() {
+  const res = await fetch("http://localhost:4000/blogsData")
+
+  const blogsData = await res.json()
+
+  return blogsData.map((blog) => {
+    return {id: blog.id}
+  })
+}
+
+async function getBlog(id) {
   try {
-    const res = await fetch("http://localhost:4000/blogsData/" + id, {
+    const res = await fetch(`http://localhost:4000/blogsData/${id}`, {
       next: {
-        revalidate: 1
+        revalidate: 30
       }
     });
 
@@ -42,7 +54,8 @@ export default async function NewsDetails({ params }) {
         </Link>
       </nav>
       <Ads />
-      {blogDetail.blogHead}
+      <BlogDetails blogsData={blogDetail} />
+      <RelatedNews />
     </div>
   );
 }

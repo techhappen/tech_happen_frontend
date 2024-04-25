@@ -35,7 +35,7 @@ const Articles = () => {
       <h1 className="text-xl my-5">
         <span className="border-b-4 border-[#FFA500]">Recent</span> Articles
       </h1>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {blogsData.slice(0, pagination).map((blog) => (
           <section
             className="mt-5 hover:bg-slate-50 border-2 overflow-hidden rounded-3xl"

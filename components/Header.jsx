@@ -1,14 +1,14 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
-// import Carousel from "@itseasy21/react-elastic-carousel";
+import Carousel from "@itseasy21/react-elastic-carousel";
 import Link from "next/link";
 
 const getBlogsHead = async () => {
   const res = await fetch("http://localhost:4000/blogsData", {
     next: {
-      revalidate: 1
-    }
+      revalidate: 1,
+    },
   });
 
   return res.json();
@@ -17,13 +17,22 @@ const getBlogsHead = async () => {
 const Header = async () => {
   const blogsHead = await getBlogsHead();
 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 1 },
+    { width: 850, itemsToShow: 2, itemsToScroll: 1 },
+    { width: 1150, itemsToShow: 3, itemsToScroll: 0, pagination: false },
+    { width: 1450, itemsToShow: 3, itemsToScroll: 0, pagination: false  },
+    { width: 1750, itemsToShow: 3, itemsToScroll: 0, pagination: false  }
+  ]
+
   return (
     <header className="mx-6">
-      <div className="grid md:grid-cols-2 grid-rows-3 md:grid-rows-2 grid-flow-col gap-4">
-        {blogsHead.slice(-3).map((blog) => (
-          // <Carousel showArrows={false} enableAutoPlay autoPlaySpeed={1000}>
+      <Carousel breakPoints={breakPoints} showArrows={false} enableAutoPlay autoPlaySpeed={4000}>
+        {/* <div className="md:grid grid-cols-2 grid-rows-2 grid-flow-col gap-4"> */}
+          {blogsHead.slice(-3).map((blog) => (
             <section
-              className="relative group h-[250px] hover:bg-slate-50 overflow-hidden rounded-3xl md:first:row-span-2 md:first:h-full"
+              className="relative group m-2 hover:bg-slate-50 overflow-hidden rounded-3xl"
               key={blog.id}
             >
               <Link href={`/news-details/${blog.id}`}>
@@ -83,41 +92,9 @@ const Header = async () => {
                 </div>
               </Link>
             </section>
-          // </Carousel>
-        ))}
-      </div>
-
-      {/* <section className="mt-5 md:hidden">
-        <Carousel showArrows={false} enableAutoPlay autoPlaySpeed={1000}>
-          <div className="relative row-span-2">
-            <Image
-              src="/assets/images/cyber.svg"
-              alt="logo"
-              width={900}
-              height={100}
-              className="rounded-t-3xl w-full"
-            />
-          </div>
-          <div className="relative">
-            <Image
-              src="/assets/images/codingDemo.svg"
-              alt="logo"
-              width={900}
-              height={100}
-              className="rounded-t-3xl w-full"
-            />
-          </div>
-          <div className="relative">
-            <Image
-              src="/assets/images/snowDemo.svg"
-              alt="logo"
-              width={900}
-              height={100}
-              className="rounded-t-3xl w-full"
-            />
-          </div>
-        </Carousel>
-      </section> */}
+          ))}
+        {/* </div> */}
+      </Carousel>
     </header>
   );
 };
