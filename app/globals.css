@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+:root {
+  --blue: #000775;
+  --orange: #FFA500;
+}
 
 @font-face {
   font-family: 'coolvetica';
@@ -32,12 +36,12 @@ body {
 }
 .rec-dot:focus,
 .rec-dot:hover {
-    box-shadow: 0 0 1px 3px var(--blue) !important;
+    box-shadow: 0 0 1px 3px var(--orange) !important;
 }
 .rec-dot_active:focus,
 .rec-dot_active:hover {
-    background-color: var(--blue) !important;
-    box-shadow: 0 0 1px 3px var(--blue) !important;
+    background-color: var(--orange) !important;
+    box-shadow: 0 0 1px 3px var(--orange) !important;
 }
 
 .rec-arrow {
