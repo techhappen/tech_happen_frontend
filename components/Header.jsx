@@ -32,7 +32,7 @@ const Header = async () => {
         {/* <div className="md:grid grid-cols-2 grid-rows-2 grid-flow-col gap-4"> */}
           {blogsHead.slice(-3).map((blog) => (
             <section
-              className="relative group m-2 hover:bg-slate-50 overflow-hidden rounded-3xl"
+              className="relative group m-2 hover:bg-slate-50 rounded-3xl overflow-hidden"
               key={blog.id}
             >
               <Link href={`/news-details/${blog.id}`}>

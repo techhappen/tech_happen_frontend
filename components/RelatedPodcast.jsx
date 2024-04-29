@@ -14,7 +14,7 @@ const getPodcast = async () => {
   return res.json();
 }
 
-export default async function Podcast() {
+export default async function RelatedPodcast() {
 
   const podcastData = await getPodcast();
 
@@ -31,7 +31,7 @@ export default async function Podcast() {
   return (
     <div className="mx-6">
       <h1 className="text-xl my-5">
-        <span className="border-b-4 border-[#FFA500]">Podcasts</span>
+        <span className="border-b-4 border-[#FFA500]">Related</span> Podcast
       </h1>
       
       <Suspense fallback={<Loading />}>

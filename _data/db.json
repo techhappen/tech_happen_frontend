@@ -18,7 +18,7 @@
         {
             "id":2,
             "blogType":"Start-up",
-            "blogHead":"The ultimate guide to visit Einbeck. ",
+            "blogHead":"The perfect guide to visit Einbeck. ",
             "authorImage":"/assets/images/avatar.svg",
             "date":"7th Feb, 2024",
             "authorName":"Author's name",
@@ -32,7 +32,7 @@
         {
             "id":3,
             "blogType":"Edtech",
-            "blogHead":"The ultimate guide to visit Einbeck. Check out what is happening. ",
+            "blogHead":"The visit to TecHappen. Check out what is happening. ",
             "authorImage":"/assets/images/avatar.svg",
             "date":"7th Feb, 2024",
             "authorName":"Author's name",
@@ -120,22 +120,25 @@
           "id": 1,  
           "title": "Rasing awareness regarding Web 3 in Nigeria ",
           "host": "Giwa Gold",
-          "guest": "joe ken",
-          "image": "/assets/images/podcastimage.svg"
+          "guest": "DruxAMB Pod",
+          "image": "/assets/images/podcast-1.svg",
+          "sound": "/assets/audio/podcast.wav"
         },
         {
           "id": 2,  
-          "title": "podcast 2 ",
-          "host": "Giwa Gold",
-          "guest": "joe ken",
-          "image": "/assets/images/podcastimage.svg"
+          "title": "Rasing awareness regarding Web 3 in New York ",
+          "host": "James ATC",
+          "guest": "Adeleke Davido",
+          "image": "/assets/images/podcast-2.svg",
+          "sound": "/assets/audio/podcast.wav"
         },
         {
           "id": 3,  
-          "title": "podcast 3 ",
-          "host": "Giwa Gold",
-          "guest": "joe ken",
-          "image": "/assets/images/podcastimage.svg"
+          "title": "Rasing awareness regarding Web 3 in Nigeria Ivory Cost",
+          "host": "Platinum Kate",
+          "guest": "Lucky Wemo",
+          "image": "/assets/images/snow.jpg",
+          "sound": "/assets/audio/podcast.wav"
         }
       ]
 }
