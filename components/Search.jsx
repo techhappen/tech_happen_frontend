@@ -8,7 +8,8 @@ export default function Search({ setGetSearch }) {
 
   const [search, setSearch] = useState("")
 
-  const handleSearchButton = () => {
+  const handleSearchButton = (event) => {
+    event.preventDefault();
     setGetSearch(search);
 
     setSearch("")
@@ -20,22 +21,24 @@ export default function Search({ setGetSearch }) {
 
 
   return (
-    <div className="flex justify-between bg-white w-full h-[40px] border rounded-3xl px-[20px] py-[8px]">
-      <input
-        onChange={handleSearch}
-        value={search}
-        type="text"
-        placeholder="Search"
-        className="bg-transparent outline-none w-full"
-      />
-      <button onClick={handleSearchButton} >
-        <Image
-          src="/assets/icons/searchIcon.svg"
-          alt="search"
-          height={24}
-          width={24}
+    <div>
+      <form className="flex my-3 mx-auto justify-between bg-white w-full md:w-7/12 h-[40px] overflow-hidden border rounded-3xl ps-[20px]">
+        <input
+          onChange={handleSearch}
+          value={search}
+          type="text"
+          placeholder="Search for blog"
+          className="bg-transparent outline-none w-full"
         />
-      </button>
+        <button type="submit" onClick={handleSearchButton} className="bg-[#000775] w-20 px-6" >
+          <Image
+            src="/assets/icons/searchIcon.svg"
+            alt="search"
+            height={24}
+            width={24}
+          />
+        </button>
+      </form>
     </div>
   );
 }

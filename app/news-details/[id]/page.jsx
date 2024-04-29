@@ -4,6 +4,7 @@ import Ads from "@/components/Ads";
 import BlogDetails from "../page";
 import RelatedNews from "@/components/RelatedNews";
 import { notFound } from "next/navigation";
+import RelatedPodcast from "@/components/RelatedPodcast";
 
 export async function generateStaticParams() {
   const res = await fetch("http://localhost:4000/blogsData")
@@ -57,6 +58,7 @@ export default async function NewsDetails({ params }) {
       <Ads />
       <BlogDetails blogsData={blogDetail} />
       <RelatedNews />
+      <RelatedPodcast />
     </div>
   );
 }

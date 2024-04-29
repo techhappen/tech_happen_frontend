@@ -65,6 +65,7 @@ export default function BlogDetails({ blogsData }) {
         </div>
         <div className="hidden lg:block">
           <NewsLetter />
+          
         </div>
       </section>
     </main>

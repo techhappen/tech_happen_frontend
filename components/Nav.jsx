@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import NavMobile from "./NavMobile";
 import { useState, useEffect } from "react";
 
@@ -37,7 +38,7 @@ const Nav = () => {
         }`}
       >
         <div className="hidden md:flex mt-2 justify-between w-40">
-          <a href="#">
+          <a href="#" target="_blank">
             <Image
               src="/assets/icons/facebookIcon.svg"
               alt="icon"
@@ -46,7 +47,7 @@ const Nav = () => {
               className="hover:animate-bounce"
             />
           </a>
-          <a href="#">
+          <a href="https://x.com/techappen_ng" target="_blank">
             <Image
               src="/assets/icons/twitterIcon.svg"
               alt="icon"
@@ -55,7 +56,7 @@ const Nav = () => {
               className="hover:animate-bounce"
             />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <Image
               src="/assets/icons/linkedinIcon.svg"
               alt="icon"
@@ -64,7 +65,7 @@ const Nav = () => {
               className="hover:animate-bounce"
             />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <Image
               src="/assets/icons/youtubeIcon.svg"
               alt="icon"
@@ -73,7 +74,7 @@ const Nav = () => {
               className="hover:animate-bounce"
             />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <Image
               src="/assets/icons/instagramIcon.svg"
               alt="icon"
@@ -111,29 +112,17 @@ const Nav = () => {
             className="h-auto w-auto"
           />
         </div>
-        <div className="bg-[#FAFAFA] md:hidden w-[46px] p-2 rounded-full border-2 border-[#EEEEEE]">
-          <Image
-            src="/assets/icons/search.svg"
-            alt="search"
-            width={30}
-            height={30}
-          />
-        </div>
-        <div className="hidden md:flex bg-white w-[250px] h-[40px] border rounded-3xl px-[20px] py-[8px]">
-          <input
-            type="text"
-            placeholder="Search"
-            className="bg-transparent outline-none"
-          />
-          <button>
+        
+        <Link href="http://localhost:3000/search-result" >
+          <div className="bg-[#FAFAFA] w-[46px] p-2 rounded-full border-2 border-[#EEEEEE]">
             <Image
-              src="/assets/icons/searchIcon.svg"
+              src="/assets/icons/search.svg"
               alt="search"
-              height={24}
-              width={24}
+              width={30}
+              height={30}
             />
-          </button>
-        </div>
+          </div>
+        </Link>
       </nav>
       {displayMenu && (
         <NavMobile setDisplayMenu={setDisplayMenu} displayMenu={displayMenu} />
